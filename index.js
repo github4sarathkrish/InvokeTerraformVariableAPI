@@ -20,7 +20,7 @@ try {
 
 // Loop through attribute and Invoke API
   for(attribute in attributes){
-    console.log("attribute:"=attribute);
+    console.log("attribute:"+attribute);
     var req = {};
     req.data = {};
     req.data.type = "vars";
