@@ -26,7 +26,7 @@ try {
     req.data = {};
     req.data.type = "vars";
     req.data.attribute = attributeArray[i];
-    console.log("Request:"+ JSON.stringify(request));
+    console.log("Request:"+ JSON.stringify(req));
     var output = "Success";
     // Invoke 
     axios.post(url, req)
