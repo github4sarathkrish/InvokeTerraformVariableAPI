@@ -15,7 +15,7 @@ try {
     headers: {'Content-Type': 'application/vnd.api+json',
               'Authorization': `Basic ${token}`}
   };
-  const url = "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D=${ organizationName }&filter%5Bworkspace%5D%5Bname%5D=${ workSpaceName}";
+  const url = "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D="+organizationName+"&filter%5Bworkspace%5D%5Bname%5D="+workSpaceName;
   console.log("url:"+url);
   const attributeArray = JSON.parse(attributes);
 
