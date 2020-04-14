@@ -17,14 +17,15 @@ try {
   };
   const url = "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D=${ organizationName }&filter%5Bworkspace%5D%5Bname%5D=${ workSpaceName}";
   console.log("url:"+url);
+  const attributeArray = JSON.parse(attributes);
 
 // Loop through attribute and Invoke API
-  for(var i=0; i < attributes.length; i++ ){
-    console.log("attribute:"+attributes[i]);
+  for(var i=0; i < attributeArray.length; i++ ){
+    console.log("attribute:"+attributeArray[i]);
     var req = {};
     req.data = {};
     req.data.type = "vars";
-    req.data.attribute = JSON.parse(attributes[i]);
+    req.data.attribute = attributeArray[i];
     console.log(`Request ${req}`);
     var output = "Success";
     // Invoke 
