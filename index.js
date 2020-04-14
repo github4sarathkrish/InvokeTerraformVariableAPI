@@ -21,19 +21,19 @@ try {
 
 // Loop through attribute and Invoke API
   for(var i=0; i < attributeArray.length; i++ ){
-    console.log("attribute:"+attributeArray[i]);
+    console.log("attribute:"+JSON.stringify(attributeArray[i]));
     var req = {};
     req.data = {};
     req.data.type = "vars";
     req.data.attribute = attributeArray[i];
-    console.log(`Request ${req}`);
+    console.log("Request:"+ JSON.stringify(request));
     var output = "Success";
     // Invoke 
     axios.post(url, req)
       .then((response) => {
-        console.log(response);
+        console.log(JSON.stringify(response));
       }, (error) => {
-        console.log(error);
+        console.log(JSON.stringify(error));
         output = error;
       });
 
