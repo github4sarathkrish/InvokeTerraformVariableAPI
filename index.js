@@ -34,7 +34,6 @@ try {
       }, (error) => {
         console.log(error);
         output = error;
-        break;
       });
 
   }
