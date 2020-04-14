@@ -6,14 +6,15 @@ try {
   const attributes = core.getInput('attributes');
   const workSpaceName = core.getInput('workSpaceName');
   const organizationName = core.getInput('organizationName');
-  const token = core.getInput('token')
+  var token = core.getInput('token')
+  token = "Basic "+token;
   
   console.log(`Input ${attributes}`);
   console.log(`workSpaceName ${workSpaceName}`);
   console.log(`organizationName ${organizationName}`);
   const options = {
     headers: {'Content-Type': 'application/vnd.api+json',
-              'Authorization': `Basic ${token}`}
+              'Authorization': token}
   };
   const url = "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D="+organizationName+"&filter%5Bworkspace%5D%5Bname%5D="+workSpaceName;
   console.log("url:"+url);
