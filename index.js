@@ -19,12 +19,12 @@ try {
   console.log("url:"+url);
 
 // Loop through attribute and Invoke API
-  for(attribute in attributes){
-    console.log("attribute:"+attribute);
+  for(var i=0; i < attributes.length; i++ ){
+    console.log("attribute:"+attributes[i]);
     var req = {};
     req.data = {};
     req.data.type = "vars";
-    req.data.attribute = JSON.parse(attributes);
+    req.data.attribute = JSON.parse(attributes[i]);
     console.log(`Request ${req}`);
     var output = "Success";
     // Invoke 
