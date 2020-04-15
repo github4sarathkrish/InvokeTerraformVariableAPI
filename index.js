@@ -6,7 +6,7 @@ try {
   const attributes = core.getInput('attributes');
   const workSpaceName = core.getInput('workSpaceName');
   const organizationName = core.getInput('organizationName');
-  var token = core.getInput('token')
+  var token = core.getInput('terraformToken')
   token = "Basic "+token;
   
   console.log(`Input ${attributes}`);
